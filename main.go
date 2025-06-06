@@ -77,6 +77,6 @@ func crawl(url string, urlTracker *urlTracker.URLTracker, wg *sync.WaitGroup) {
 		}
 
 		wg.Add(1)
-		crawl(s.AttrOr("href", ""), urlTracker, wg)
+		crawl(linkURL, urlTracker, wg)
 	})
 }
